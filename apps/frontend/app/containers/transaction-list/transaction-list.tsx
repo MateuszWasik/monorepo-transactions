@@ -16,7 +16,7 @@ export const TransactionList = () => {
   }, []);
 
   return (
-    <div className="bg-slate-200">
+    <>
       <ul role="list" className="flex flex-col divide-y divide-gray-100 w-full">
         {transactions.map((transaction) => (
           <li key={transaction.id} className="flex-1 gap-x-6 py-5">
@@ -24,6 +24,6 @@ export const TransactionList = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </>
   );
 };

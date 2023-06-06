@@ -2,7 +2,9 @@
   "name": "@monorepo/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "all": "npx nx run-many --target=serve --all --maxParallel=100"
+  },
   "private": true,
   "dependencies": {
     "@nx/next": "16.3.2",

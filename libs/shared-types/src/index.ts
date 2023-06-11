@@ -10,7 +10,6 @@ export interface Transaction {
 
 export interface Merchant {
   name: string;
-  avatarUrl: string;
 }
 
 export interface Money {

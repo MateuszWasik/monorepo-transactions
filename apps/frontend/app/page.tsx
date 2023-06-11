@@ -1,11 +1,10 @@
 'use client';
-
-import { TransactionList } from './containers/transaction-list/transaction-list';
+import { Transactions } from './containers/transactions/transactions';
 
 export default function Index() {
   return (
     <>
-      <TransactionList />
+      <Transactions />
     </>
   );
 }

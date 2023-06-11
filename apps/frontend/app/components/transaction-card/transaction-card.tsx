@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import { Transaction } from '@monorepo/shared-types';
+import { randomBgColor, UserAvatar } from "../user-avatar/user-avatar";
 
 export const TransactionCard = ({
   id,
@@ -8,18 +8,13 @@ export const TransactionCard = ({
   merchant,
   date,
 }: Transaction) => {
+  randomBgColor()
+
   return (
-    <div className="flex justify-between min-w-0 gap-x-6 py-5 px-5 rounded-md bg-white">
+    <div className="flex justify-between min-w-0 gap-x-6 py-5 px-5 rounded-md bg-zinc-50 shadow-lg">
       <div className="flex gap-x-4">
-        <Image
-          className="rounded-full"
-          src={merchant.avatarUrl}
-          alt=""
-          height={50}
-          width={50}
-          priority={true}
-        />
-        <div className="min-w-0 flex-auto px-3">
+        <UserAvatar value={merchant.name} />
+        <div className="flex justify-center flex-col min-w-0  px-3">
           <p className="text-sm font-semibold leading-6 text-gray-900">
             {merchant.name}
           </p>

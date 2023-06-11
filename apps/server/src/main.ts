@@ -1,8 +1,11 @@
 import express from 'express';
 import * as path from 'path';
+import bodyParser from 'body-parser';
 
 import cors from 'cors';
 import { transactions } from './transactions';
+
+const jsonParser = bodyParser.json();
 
 const app = express();
 app.use(cors());
@@ -15,6 +18,15 @@ app.get('/api', (req, res) => {
 
 app.get('/transactions', (_, res) => {
   res.send(transactions);
+});
+
+app.post('/add', jsonParser, (req, res) => {
+  const newTransaction = req.body;
+
+  transactions.push(newTransaction);
+
+  console.log('request', req.body);
+  res.send('Added!');
 });
 
 const port = process.env.PORT || 3333;

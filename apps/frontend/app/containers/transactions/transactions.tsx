@@ -4,8 +4,8 @@ import { API_URL } from '../../constants';
 import { TransactionList } from '../../components/transaction-list/transaction-list';
 import { NewTransaction } from '../../components/new-transaction/new-transaction';
 
-const MOCK_TRANSACTION = {
-  id: Math.random(),
+const MOCK_TRANSACTION: Transaction = {
+  id: String(Math.random()),
   name: 'VISA',
   amount: 999,
   date: '06-06-2023',
@@ -14,15 +14,14 @@ const MOCK_TRANSACTION = {
   },
 };
 
-const OK_STATUS = 200
+const OK_STATUS = 200;
 
 export const Transactions = () => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [blurryBackground, setBlurryBackground] = useState(false);
 
   const handleSaveNewTransaction = (newTransaction: Transaction) => {
-
-    if(newTransaction) {
+    if (newTransaction) {
       fetch(`${API_URL}/add`, {
         method: 'POST',
         headers: {
@@ -30,13 +29,13 @@ export const Transactions = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(MOCK_TRANSACTION),
-      }).then(response => {
+      }).then((response) => {
         if (response.status === OK_STATUS) {
-          setTransactions((prevState => [...prevState, ...MOCK_TRANSACTION]))
-      }})
-    }
-    else {
-      console.error('Something went wrong')
+          setTransactions((prevState) => [...prevState, MOCK_TRANSACTION]);
+        }
+      });
+    } else {
+      console.error('Something went wrong');
     }
   };
 
@@ -47,7 +46,10 @@ export const Transactions = () => {
   }, []);
   return (
     <div className={`${blurryBackground && 'blur-sm'}`}>
-      <NewTransaction setBlurryBackground={setBlurryBackground} handleOnFormSubmit={handleSaveNewTransaction} />
+      <NewTransaction
+        setBlurryBackground={setBlurryBackground}
+        handleOnFormSubmit={handleSaveNewTransaction}
+      />
       <TransactionList transactions={transactions} />
     </div>
   );

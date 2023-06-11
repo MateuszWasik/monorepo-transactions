@@ -10,8 +10,14 @@ export const TextInput = ({ name, label }: TextInputProps) => {
 
   return (
     <div>
-      <label htmlFor={name}>{label}</label>
-      <input id={name} {...register(name)} />
+      <label htmlFor={name} className="text-black dark:text-white">
+        {label}
+      </label>
+      <input
+        {...register(name)}
+        id={name}
+        className="appearance-none border rounded w-full py-2 px-3 bg-white text-black dark:bg-gray-900 dark:text-white leading-tight focus:outline-none focus:shadow-outline"
+      />
     </div>
   );
 };

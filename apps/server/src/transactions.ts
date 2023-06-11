@@ -8,8 +8,7 @@ export const transactions: Transaction[] = [
     amount: 23.54,
     date: '20-02-2023',
     merchant: {
-      name: 'Apple',
-      avatarUrl: 'https://xsgames.co/randomusers/avatar.php?g=male',
+      name: 'MEDIA MARKT',
     },
   },
   {
@@ -18,8 +17,7 @@ export const transactions: Transaction[] = [
     amount: 100,
     date: '01-05-2023',
     merchant: {
-      name: 'Amazon',
-      avatarUrl: 'https://xsgames.co/randomusers/avatar.php?g=male',
+      name: 'NESTLE',
     },
   },
   {
@@ -29,7 +27,6 @@ export const transactions: Transaction[] = [
     date: '02-06-2023',
     merchant: {
       name: 'eBay',
-      avatarUrl: 'https://xsgames.co/randomusers/avatar.php?g=male',
     },
   },
   {
@@ -38,8 +35,7 @@ export const transactions: Transaction[] = [
     amount: 250,
     date: '03-06-2023',
     merchant: {
-      name: 'Amazon',
-      avatarUrl: 'https://xsgames.co/randomusers/avatar.php?g=male',
+      name: 'RICOLA',
     },
   },
   {
@@ -49,7 +45,6 @@ export const transactions: Transaction[] = [
     date: '05-06-2023',
     merchant: {
       name: 'Amazon',
-      avatarUrl: 'https://xsgames.co/randomusers/avatar.php?g=male',
     },
   },
 ];

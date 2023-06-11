@@ -1,4 +1,6 @@
 import './global.css';
+import { ReactNode } from "react";
+import { randomBgColor } from "./components/user-avatar/user-avatar";
 
 export const metadata = {
   title: 'Welcome to frontend',
@@ -8,11 +10,17 @@ export const metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
+
+  randomBgColor();
   return (
-    <html className="h-full bg-gray-100" lang="en">
-      <body className="h-full">{children}</body>
+    <html className="h-full bg-gray-900" lang="en">
+      <body className="h-full flex justify-center">
+        <div id="content-container" className="w-[64rem]">
+          <div className="px-20 pt-4 w-full">{children}</div>
+        </div>
+      </body>
     </html>
   );
 }

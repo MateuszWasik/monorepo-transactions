@@ -4,47 +4,128 @@ import { randomUUID } from 'crypto';
 export const transactions: Transaction[] = [
   {
     id: randomUUID(),
-    name: 'VISA',
-    amount: 23.54,
-    date: '20-02-2023',
+    name: 'Transaction 1',
+    amount: 19.99,
+    date: new Date('2023-06-15'),
     merchant: {
-      name: 'MEDIA MARKT',
+      name: 'Merchant A',
     },
   },
   {
     id: randomUUID(),
-    name: 'VISA',
-    amount: 100,
-    date: '01-05-2023',
+    name: 'Transaction 2',
+    amount: 49.99,
+    date: new Date('2023-06-14'),
     merchant: {
-      name: 'NESTLE',
+      name: 'Merchant B',
     },
   },
   {
     id: randomUUID(),
-    name: 'MASTERCARD',
-    amount: 99.0,
-    date: '02-06-2023',
+    name: 'Transaction 3',
+    amount: 9.99,
+    date: new Date('2023-06-14'),
     merchant: {
-      name: 'eBay',
+      name: 'Merchant C',
     },
   },
   {
     id: randomUUID(),
-    name: 'MASTERCARD',
-    amount: 250,
-    date: '03-06-2023',
+    name: 'Transaction 4',
+    amount: 24.99,
+    date: new Date('2023-06-14'),
     merchant: {
-      name: 'RICOLA',
+      name: 'Merchant D',
     },
   },
   {
     id: randomUUID(),
-    name: 'VISA',
-    amount: 44.32,
-    date: '05-06-2023',
+    name: 'Transaction 5',
+    amount: 15.99,
+    date: new Date('2023-06-11'),
     merchant: {
-      name: 'Amazon',
+      name: 'Merchant E',
+    },
+  },
+  {
+    id: randomUUID(),
+    name: 'Transaction 6',
+    amount: 59.99,
+    date: new Date('2023-06-10'),
+    merchant: {
+      name: 'Merchant F',
+    },
+  },
+  {
+    id: randomUUID(),
+    name: 'Transaction 7',
+    amount: 12.99,
+    date: new Date('2023-06-09'),
+    merchant: {
+      name: 'Merchant G',
+    },
+  },
+  {
+    id: randomUUID(),
+    name: 'Transaction 8',
+    amount: 39.99,
+    date: new Date('2023-06-09'),
+    merchant: {
+      name: 'Merchant H',
+    },
+  },
+  {
+    id: randomUUID(),
+    name: 'Transaction 9',
+    amount: 8.99,
+    date: new Date('2023-06-09'),
+    merchant: {
+      name: 'Merchant I',
+    },
+  },
+  {
+    id: randomUUID(),
+    name: 'Transaction 10',
+    amount: 29.99,
+    date: new Date('2023-06-06'),
+    merchant: {
+      name: 'Merchant J',
+    },
+  },
+  {
+    id: randomUUID(),
+    name: 'Transaction 11',
+    amount: 14.99,
+    date: new Date('2023-06-06'),
+    merchant: {
+      name: 'Merchant K',
+    },
+  },
+  {
+    id: randomUUID(),
+    name: 'Transaction 12',
+    amount: 19.99,
+    date: new Date('2023-06-04'),
+    merchant: {
+      name: 'Merchant L',
+    },
+  },
+  {
+    id: randomUUID(),
+    name: 'Transaction 13',
+    amount: 49.99,
+    date: new Date('2023-06-03'),
+    merchant: {
+      name: 'Merchant M',
+    },
+  },
+  {
+    id: randomUUID(),
+    name: 'Transaction 14',
+    amount: 9.99,
+    date: new Date('2023-06-02'),
+    merchant: {
+      name: 'Merchant N',
     },
   },
 ];

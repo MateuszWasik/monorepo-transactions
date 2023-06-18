@@ -1,14 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import type { Transaction } from '@monorepo/shared-types';
 import { API_URL } from '../../constants';
 import { TransactionList } from '../../components/transaction-list/transaction-list';
 import { NewTransaction } from '../../components/new-transaction/new-transaction';
+import { useGetTransactions } from '../../hooks/use-get-transactions';
 
 const MOCK_TRANSACTION: Transaction = {
   id: String(Math.random()),
   name: 'VISA',
   amount: 999,
-  date: '06-06-2023',
+  date: new Date('2023-06-06'),
   merchant: {
     name: 'TESLA',
   },
@@ -17,33 +18,30 @@ const MOCK_TRANSACTION: Transaction = {
 const OK_STATUS = 200;
 
 export const Transactions = () => {
-  const [transactions, setTransactions] = useState<Transaction[]>([]);
+  const { transactions, setTransactions } = useGetTransactions();
   const [blurryBackground, setBlurryBackground] = useState(false);
 
   const handleSaveNewTransaction = (newTransaction: Transaction) => {
     if (newTransaction) {
-      fetch(`${API_URL}/add`, {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(MOCK_TRANSACTION),
-      }).then((response) => {
-        if (response.status === OK_STATUS) {
-          setTransactions((prevState) => [...prevState, MOCK_TRANSACTION]);
-        }
-      });
-    } else {
-      console.error('Something went wrong');
+      try {
+        fetch(`${API_URL}/add`, {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(MOCK_TRANSACTION),
+        }).then((response) => {
+          if (response.status === OK_STATUS) {
+            setTransactions((prevState) => [...prevState, MOCK_TRANSACTION]);
+          }
+        });
+      } catch (e) {
+        console.error(e);
+      }
     }
   };
 
-  useEffect(() => {
-    fetch(`${API_URL}/transactions`)
-      .then((response) => response.json())
-      .then((transactions) => setTransactions(transactions));
-  }, []);
   return (
     <div className={`${blurryBackground && 'blur-sm'}`}>
       <NewTransaction

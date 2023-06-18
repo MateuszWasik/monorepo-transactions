@@ -24,9 +24,6 @@ export const TransactionCard = ({
         <p className="text-sm leading-5 text-gray-900 dark:text-gray-300">
           {amount}
         </p>
-        {/*<p className="mt-1 text-xs leading-5 text-gray-500 dark:text-gray-300">*/}
-        {/*  {date.toDateString()}*/}
-        {/*</p>*/}
       </div>
     </div>
   );

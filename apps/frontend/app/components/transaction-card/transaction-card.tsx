@@ -6,7 +6,6 @@ export const TransactionCard = ({
   name,
   amount,
   merchant,
-  date,
 }: Transaction) => {
   return (
     <div className="flex justify-between min-w-0 gap-x-6 py-5 px-5 rounded-md bg-gray-100 dark:bg-gray-700 shadow-lg dark:shadow-gray-700/50">
@@ -24,9 +23,6 @@ export const TransactionCard = ({
       <div className="sm:flex sm:flex-col sm:items-end">
         <p className="text-sm leading-5 text-gray-900 dark:text-gray-300">
           {amount}
-        </p>
-        <p className="mt-1 text-xs leading-5 text-gray-500 dark:text-gray-300">
-          {date}
         </p>
       </div>
     </div>

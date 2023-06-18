@@ -4,7 +4,7 @@ export interface Transaction {
   id: string;
   name: string;
   amount: number;
-  date: string;
+  date: Date;
   merchant: Merchant;
 }
 
@@ -18,3 +18,8 @@ export interface Money {
 }
 
 export type Currency = 'PLN' | 'EUR' | 'USD';
+
+export interface SortedTransactionsByDateType {
+  date: string;
+  transactions: Transaction[];
+}

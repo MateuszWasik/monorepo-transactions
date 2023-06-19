@@ -6,7 +6,7 @@ export const useThemeChanger = () => {
 
   useEffect(() => {
     setTheme('light');
-  }, [setTheme]);
+  }, []);
 
   const handleThemeOnChange = () => {
     if (theme === 'light') setTheme('dark');

@@ -7,16 +7,16 @@ type TransactionListProps = {
 
 export const TransactionList = ({ transactions }: TransactionListProps) => {
   return (
-    <ul role="list" className="flex flex-col divide-y divide-gray-100 w-full">
-      {transactions.map((transaction) => (
-        <>
+    <ul role="list" className="flex flex-col  w-full mt-4">
+      {transactions.map((transaction, index) => (
+        <div key={`${transaction.date}-${index}`}>
           <span>{transaction.date}</span>
           {transaction.transactions.map((transaction) => (
             <li key={transaction.id} className="flex-1 gap-x-6 py-5">
               <TransactionCard {...transaction} />
             </li>
           ))}
-        </>
+        </div>
       ))}
     </ul>
   );

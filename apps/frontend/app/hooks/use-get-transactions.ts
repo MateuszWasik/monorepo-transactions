@@ -7,12 +7,15 @@ import {
 
 export const useGetTransactions = () => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
     fetch(`${API_URL}/transactions`)
       .then((response) => response.json())
       .then((transactions) => {
         setTransactions(transactions);
+        setIsLoading(false);
       });
   }, []);
 
@@ -47,5 +50,5 @@ export const useGetTransactions = () => {
     }
   }, []);
 
-  return { transactions: sortedTransactionByDates, setTransactions };
+  return { transactions: sortedTransactionByDates, setTransactions, isLoading };
 };

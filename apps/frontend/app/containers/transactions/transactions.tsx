@@ -4,6 +4,7 @@ import { API_URL } from '../../constants';
 import { TransactionList } from '../../components/transaction-list/transaction-list';
 import { NewTransaction } from '../../components/new-transaction/new-transaction';
 import { useGetTransactions } from '../../hooks/use-get-transactions';
+import { SkeletonLoader } from '../../ui/skeleton-loader/skeleton-loader';
 
 const MOCK_TRANSACTION: Transaction = {
   id: String(Math.random()),
@@ -18,7 +19,7 @@ const MOCK_TRANSACTION: Transaction = {
 const OK_STATUS = 200;
 
 export const Transactions = () => {
-  const { transactions, setTransactions } = useGetTransactions();
+  const { transactions, setTransactions, isLoading } = useGetTransactions();
   const [blurryBackground, setBlurryBackground] = useState(false);
 
   const handleSaveNewTransaction = (newTransaction: Transaction) => {
@@ -41,6 +42,8 @@ export const Transactions = () => {
       }
     }
   };
+
+  if (isLoading) return <SkeletonLoader listToRender={7} />;
 
   return (
     <div className={`${blurryBackground && 'blur-sm'}`}>

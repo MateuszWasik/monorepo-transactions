@@ -12,12 +12,10 @@ app.use(cors());
 
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
-app.get('/api', (req, res) => {
-  res.send({ message: 'Welcome to server!' });
-});
-
 app.get('/transactions', (_, res) => {
-  res.send(transactions);
+  setTimeout(() => {
+    res.send(transactions);
+  }, 4000);
 });
 
 app.post('/add', jsonParser, (req, res) => {
@@ -25,7 +23,6 @@ app.post('/add', jsonParser, (req, res) => {
 
   transactions.push(newTransaction);
 
-  console.log('request', req.body);
   res.send('Added!');
 });
 

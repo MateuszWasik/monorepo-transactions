@@ -1,8 +1,8 @@
-import { useThemeChanger } from '../hooks/use-theme-changer';
+interface SunIconProps {
+  theme?: string;
+}
 
-export const SunIcon = () => {
-  const { theme } = useThemeChanger();
-
+export const SunIcon = ({ theme = 'light' }: SunIconProps) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
       <path

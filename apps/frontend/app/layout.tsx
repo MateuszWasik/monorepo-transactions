@@ -1,6 +1,5 @@
 import './global.css';
 import { ReactNode } from 'react';
-import { randomBgColor } from './components/user-avatar/user-avatar';
 import { LayoutWrapper } from './layout-wrapper';
 
 export const metadata = {

@@ -2,14 +2,10 @@ export * from './lib/shared-types';
 
 export interface Transaction {
   id: string;
-  name: string;
+  cardName: string;
   amount: number;
   date: Date;
-  merchant: Merchant;
-}
-
-export interface Merchant {
-  name: string;
+  merchantName: string;
 }
 
 export interface Money {
@@ -23,3 +19,5 @@ export interface SortedTransactionsByDateType {
   date: string;
   transactions: Transaction[];
 }
+
+export type FormTransaction = Omit<Transaction, 'id' | 'date'>;

@@ -17,7 +17,7 @@ export const useGetTransactions = () => {
     SortedTransactionsByDateType[]
   >([]);
 
-  const { data, isLoading } = useQuery<Transaction[], Error>(
+  const { isLoading } = useQuery<Transaction[], Error>(
     'transactions',
     fetchData,
     {

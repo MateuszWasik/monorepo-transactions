@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 
 import cors from 'cors';
 import { transactions } from './transactions';
+import { randomUUID } from 'crypto';
 
 const jsonParser = bodyParser.json();
 
@@ -15,11 +16,14 @@ app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.get('/transactions', (_, res) => {
   setTimeout(() => {
     res.send(transactions);
-  }, 4000);
+  }, 2000);
 });
 
 app.post('/add', jsonParser, (req, res) => {
-  const newTransaction = req.body;
+  const newTransaction = {
+    ...req.body,
+    id: randomUUID(),
+  };
 
   transactions.push(newTransaction);
 

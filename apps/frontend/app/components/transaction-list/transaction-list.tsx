@@ -6,6 +6,7 @@ type TransactionListProps = {
 };
 
 export const TransactionList = ({ transactions }: TransactionListProps) => {
+  console.log('RENDER??');
   return (
     <ul role="list" className="flex flex-col w-full mt-4">
       {transactions.map((transaction, index) => (

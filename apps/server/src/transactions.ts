@@ -1,131 +1,105 @@
 import type { Transaction } from '@monorepo/shared-types';
 import { randomUUID } from 'crypto';
 
+// generate mock data for transactions
+
 export const transactions: Transaction[] = [
   {
     id: randomUUID(),
-    name: 'Transaction 1',
+    cardName: 'Transaction 1',
     amount: 19.99,
     date: new Date('2023-06-15'),
-    merchant: {
-      name: 'Merchant A',
-    },
+    merchantName: 'Merchant A',
   },
   {
     id: randomUUID(),
-    name: 'Transaction 2',
+    cardName: 'Transaction 2',
     amount: 49.99,
     date: new Date('2023-06-14'),
-    merchant: {
-      name: 'Merchant B',
-    },
+    merchantName: 'Merchant A',
   },
   {
     id: randomUUID(),
-    name: 'Transaction 3',
+    cardName: 'Transaction 3',
     amount: 9.99,
     date: new Date('2023-06-14'),
-    merchant: {
-      name: 'Merchant C',
-    },
+    merchantName: 'Merchant A',
   },
   {
     id: randomUUID(),
-    name: 'Transaction 4',
+    cardName: 'Transaction 4',
     amount: 24.99,
     date: new Date('2023-06-14'),
-    merchant: {
-      name: 'Merchant D',
-    },
+    merchantName: 'Merchant A',
   },
   {
     id: randomUUID(),
-    name: 'Transaction 5',
+    cardName: 'Transaction 5',
     amount: 15.99,
     date: new Date('2023-06-11'),
-    merchant: {
-      name: 'Merchant E',
-    },
+    merchantName: 'Merchant A',
   },
   {
     id: randomUUID(),
-    name: 'Transaction 6',
+    cardName: 'Transaction 6',
     amount: 59.99,
     date: new Date('2023-06-10'),
-    merchant: {
-      name: 'Merchant F',
-    },
+    merchantName: 'Merchant A',
   },
   {
     id: randomUUID(),
-    name: 'Transaction 7',
+    cardName: 'Transaction 7',
     amount: 12.99,
     date: new Date('2023-06-09'),
-    merchant: {
-      name: 'Merchant G',
-    },
+    merchantName: 'Merchant A',
   },
   {
     id: randomUUID(),
-    name: 'Transaction 8',
+    cardName: 'Transaction 8',
     amount: 39.99,
     date: new Date('2023-06-09'),
-    merchant: {
-      name: 'Merchant H',
-    },
+    merchantName: 'Merchant A',
   },
   {
     id: randomUUID(),
-    name: 'Transaction 9',
+    cardName: 'Transaction 9',
     amount: 8.99,
     date: new Date('2023-06-09'),
-    merchant: {
-      name: 'Merchant I',
-    },
+    merchantName: 'Merchant A',
   },
   {
     id: randomUUID(),
-    name: 'Transaction 10',
+    cardName: 'Transaction 10',
     amount: 29.99,
     date: new Date('2023-06-06'),
-    merchant: {
-      name: 'Merchant J',
-    },
+    merchantName: 'Merchant A',
   },
   {
     id: randomUUID(),
-    name: 'Transaction 11',
+    cardName: 'Transaction 11',
     amount: 14.99,
     date: new Date('2023-06-06'),
-    merchant: {
-      name: 'Merchant K',
-    },
+    merchantName: 'Merchant A',
   },
   {
     id: randomUUID(),
-    name: 'Transaction 12',
+    cardName: 'Transaction 12',
     amount: 19.99,
     date: new Date('2023-06-04'),
-    merchant: {
-      name: 'Merchant L',
-    },
+    merchantName: 'Merchant A',
   },
   {
     id: randomUUID(),
-    name: 'Transaction 13',
+    cardName: 'Transaction 13',
     amount: 49.99,
     date: new Date('2023-06-03'),
-    merchant: {
-      name: 'Merchant M',
-    },
+    merchantName: 'Merchant A',
   },
   {
     id: randomUUID(),
-    name: 'Transaction 14',
+    cardName: 'Transaction 14',
     amount: 9.99,
     date: new Date('2023-06-02'),
-    merchant: {
-      name: 'Merchant N',
-    },
+    merchantName: 'Merchant A',
   },
 ];

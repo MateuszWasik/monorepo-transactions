@@ -2,30 +2,24 @@ import { createPortal } from 'react-dom';
 import { Modal } from '../modal/modal';
 import { useState } from 'react';
 import { Form } from '../form/form';
-import { Transaction } from '@monorepo/shared-types';
+import { FormTransaction } from '@monorepo/shared-types';
 
 interface NewTransactionProps {
-  handleOnFormSubmit: (newTransaction: Transaction) => void;
-  setBlurryBackground: (blurBackground: boolean) => void;
+  handleOnFormSubmit: (newTransaction: FormTransaction) => void;
 }
 
-export const NewTransaction = ({
-  setBlurryBackground,
-  handleOnFormSubmit,
-}: NewTransactionProps) => {
+export const NewTransaction = ({ handleOnFormSubmit }: NewTransactionProps) => {
   const [showModal, setShowModal] = useState(false);
 
   const handleOnClick = () => {
     setShowModal(true);
-    setBlurryBackground(true);
   };
 
   const handleOnClose = () => {
     setShowModal(false);
-    setBlurryBackground(false);
   };
 
-  const handleFormSubmit = (newTransaction: Transaction) => {
+  const handleFormSubmit = (newTransaction: FormTransaction) => {
     handleOnClose();
     handleOnFormSubmit(newTransaction);
   };
